@@ -2,6 +2,10 @@
 
 A clean, client-side web application that demonstrates the two-agent agentic workflow pattern. DualAgent helps users understand and experiment with the powerful pattern of **Agent 1 (Planner) → Agent 2 (Responder)**.
 
+![DualAgent Preview](dualagent-preview.jpg)
+
+*Live demo showcasing the two-agent workflow interface*
+
 ## 🌟 Features
 
 ### Core Functionality
