@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DualAgent - Two-Agent Workflow Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 DualAgent</h1>
+            <p class="subtitle">Demonstrate Two-Agent Agentic Workflows</p>
+        </header>
+
+        <!-- API Key Section -->
+        <section class="api-section">
+            <div class="input-group">
+                <label for="apiKey">OpenAI API Key <span class="key-info">(remembered for session)</span></label>
+                <input type="password" id="apiKey" placeholder="sk-... or sk-proj-..." class="api-input">
+                <button id="testKey" class="btn btn-secondary" disabled>Test Key</button>
+            </div>
+            <div id="keyStatus" class="status hidden"></div>
+        </section>
+
+        <!-- Task Input Section -->
+        <section class="task-section">
+            <div class="input-group">
+                <label for="userTask">High-Level Task</label>
+                <textarea id="userTask" placeholder="e.g., Evaluate startups for investment potential" rows="3" class="task-input"></textarea>
+            </div>
+            <button id="analyzeTask" class="btn btn-primary" disabled>Start Analysis</button>
+        </section>
+
+        <!-- Agent Workflow -->
+        <div class="agents-container">
+            <!-- Agent 1: Planner -->
+            <section class="agent-panel" id="agent1Panel">
+                <div class="agent-header">
+                    <h2>📋 Agent 1: Planner</h2>
+                    <p>Analyzes tasks and creates structured plans</p>
+                </div>
+                
+                <div class="agent-content">
+                    <div class="status-indicator">
+                        <span id="agent1Status">Ready</span>
+                    </div>
+                    
+                    <div class="output-section">
+                        <h3>Analysis & Structured Plan</h3>
+                        <div id="agent1Output" class="output-content">
+                            Waiting for task analysis...
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="editAgent1" class="btn btn-secondary" disabled>Edit Output</button>
+                        <button id="proceedToAgent2" class="btn btn-primary" disabled>Send to Agent 2</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agent 2: Responder -->
+            <section class="agent-panel" id="agent2Panel">
+                <div class="agent-header">
+                    <h2>⚡ Agent 2: Responder</h2>
+                    <p>Executes structured tasks on specific targets</p>
+                </div>
+                
+                <div class="agent-content">
+                    <div class="input-group">
+                        <label for="targetInput">Target/Subject</label>
+                        <input type="text" id="targetInput" placeholder="e.g., OpenAI, RunwayML" class="target-input" disabled>
+                    </div>
+                    
+                    <div class="status-indicator">
+                        <span id="agent2Status">Waiting for Agent 1</span>
+                    </div>
+                    
+                    <div class="output-section">
+                        <h3>Task Execution Results</h3>
+                        <div id="agent2Output" class="output-content">
+                            Waiting for structured plan and target...
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="executeTask" class="btn btn-primary" disabled>Execute Task</button>
+                        <button id="resetWorkflow" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Example Templates -->
+        <section class="examples-section">
+            <h3>Example Templates</h3>
+            <div class="example-grid">
+                <div class="example-card" data-task="Evaluate startups for investment potential">
+                    <h4>Startup Evaluation</h4>
+                    <p>Analyze team, traction, and market potential</p>
+                </div>
+                <div class="example-card" data-task="Research market opportunities in emerging technologies">
+                    <h4>Market Research</h4>
+                    <p>Identify trends and competitive landscape</p>
+                </div>
+                <div class="example-card" data-task="Analyze legal compliance requirements for new products">
+                    <h4>Legal Analysis</h4>
+                    <p>Review regulations and compliance needs</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Built with vanilla JavaScript and OpenAI API • Client-side only • No data stored</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

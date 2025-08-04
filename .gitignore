@@ -1,0 +1,33 @@
+# Node modules (if any future dependencies are added)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment files (though we don't use any)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs (if any build process is added later)
+dist/
+build/
+
+# Cache directories
+.cache/
